@@ -63,7 +63,8 @@ CMAKE_BINARY_DIR = /home/margo/Fiduccia/build
 # Directory level rules for the build root directory
 
 # The main recursive "all" target.
-all: CMakeFiles/Fiduccia.dir/all
+all: CMakeFiles/default.dir/all
+all: CMakeFiles/modified.dir/all
 .PHONY : all
 
 # The main recursive "preinstall" target.
@@ -71,34 +72,61 @@ preinstall:
 .PHONY : preinstall
 
 # The main recursive "clean" target.
-clean: CMakeFiles/Fiduccia.dir/clean
+clean: CMakeFiles/default.dir/clean
+clean: CMakeFiles/modified.dir/clean
 .PHONY : clean
 
 #=============================================================================
-# Target rules for target CMakeFiles/Fiduccia.dir
+# Target rules for target CMakeFiles/default.dir
 
 # All Build rule for target.
-CMakeFiles/Fiduccia.dir/all:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Fiduccia.dir/build.make CMakeFiles/Fiduccia.dir/depend
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Fiduccia.dir/build.make CMakeFiles/Fiduccia.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/margo/Fiduccia/build/CMakeFiles --progress-num=1,2,3 "Built target Fiduccia"
-.PHONY : CMakeFiles/Fiduccia.dir/all
+CMakeFiles/default.dir/all:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/default.dir/build.make CMakeFiles/default.dir/depend
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/default.dir/build.make CMakeFiles/default.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/margo/Fiduccia/build/CMakeFiles --progress-num=1,2,3 "Built target default"
+.PHONY : CMakeFiles/default.dir/all
 
 # Build rule for subdir invocation for target.
-CMakeFiles/Fiduccia.dir/rule: cmake_check_build_system
+CMakeFiles/default.dir/rule: cmake_check_build_system
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/margo/Fiduccia/build/CMakeFiles 3
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/Fiduccia.dir/all
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/default.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/margo/Fiduccia/build/CMakeFiles 0
-.PHONY : CMakeFiles/Fiduccia.dir/rule
+.PHONY : CMakeFiles/default.dir/rule
 
 # Convenience name for target.
-Fiduccia: CMakeFiles/Fiduccia.dir/rule
-.PHONY : Fiduccia
+default: CMakeFiles/default.dir/rule
+.PHONY : default
 
 # clean rule for target.
-CMakeFiles/Fiduccia.dir/clean:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Fiduccia.dir/build.make CMakeFiles/Fiduccia.dir/clean
-.PHONY : CMakeFiles/Fiduccia.dir/clean
+CMakeFiles/default.dir/clean:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/default.dir/build.make CMakeFiles/default.dir/clean
+.PHONY : CMakeFiles/default.dir/clean
+
+#=============================================================================
+# Target rules for target CMakeFiles/modified.dir
+
+# All Build rule for target.
+CMakeFiles/modified.dir/all:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/modified.dir/build.make CMakeFiles/modified.dir/depend
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/modified.dir/build.make CMakeFiles/modified.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/margo/Fiduccia/build/CMakeFiles --progress-num=4,5,6 "Built target modified"
+.PHONY : CMakeFiles/modified.dir/all
+
+# Build rule for subdir invocation for target.
+CMakeFiles/modified.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/margo/Fiduccia/build/CMakeFiles 3
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/modified.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/margo/Fiduccia/build/CMakeFiles 0
+.PHONY : CMakeFiles/modified.dir/rule
+
+# Convenience name for target.
+modified: CMakeFiles/modified.dir/rule
+.PHONY : modified
+
+# clean rule for target.
+CMakeFiles/modified.dir/clean:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/modified.dir/build.make CMakeFiles/modified.dir/clean
+.PHONY : CMakeFiles/modified.dir/clean
 
 #=============================================================================
 # Special targets to cleanup operation of make.

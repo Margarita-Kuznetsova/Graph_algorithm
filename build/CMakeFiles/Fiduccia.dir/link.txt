@@ -1,1 +1,0 @@
-/usr/bin/clang++  -O3 CMakeFiles/Fiduccia.dir/main.cpp.o CMakeFiles/Fiduccia.dir/src.cpp.o -o Fiduccia 

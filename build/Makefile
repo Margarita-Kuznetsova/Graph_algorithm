@@ -117,65 +117,105 @@ depend:
 .PHONY : depend
 
 #=============================================================================
-# Target rules for targets named Fiduccia
+# Target rules for targets named default
 
 # Build rule for target.
-Fiduccia: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 Fiduccia
-.PHONY : Fiduccia
+default: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 default
+.PHONY : default
 
 # fast build rule for target.
-Fiduccia/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Fiduccia.dir/build.make CMakeFiles/Fiduccia.dir/build
-.PHONY : Fiduccia/fast
+default/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/default.dir/build.make CMakeFiles/default.dir/build
+.PHONY : default/fast
 
-main.o: main.cpp.o
-.PHONY : main.o
+#=============================================================================
+# Target rules for targets named modified
 
-# target to build an object file
-main.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Fiduccia.dir/build.make CMakeFiles/Fiduccia.dir/main.cpp.o
-.PHONY : main.cpp.o
+# Build rule for target.
+modified: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 modified
+.PHONY : modified
 
-main.i: main.cpp.i
-.PHONY : main.i
+# fast build rule for target.
+modified/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/modified.dir/build.make CMakeFiles/modified.dir/build
+.PHONY : modified/fast
 
-# target to preprocess a source file
-main.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Fiduccia.dir/build.make CMakeFiles/Fiduccia.dir/main.cpp.i
-.PHONY : main.cpp.i
-
-main.s: main.cpp.s
-.PHONY : main.s
-
-# target to generate assembly for a file
-main.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Fiduccia.dir/build.make CMakeFiles/Fiduccia.dir/main.cpp.s
-.PHONY : main.cpp.s
-
-src.o: src.cpp.o
-.PHONY : src.o
+default.o: default.cpp.o
+.PHONY : default.o
 
 # target to build an object file
-src.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Fiduccia.dir/build.make CMakeFiles/Fiduccia.dir/src.cpp.o
-.PHONY : src.cpp.o
+default.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/default.dir/build.make CMakeFiles/default.dir/default.cpp.o
+.PHONY : default.cpp.o
 
-src.i: src.cpp.i
-.PHONY : src.i
+default.i: default.cpp.i
+.PHONY : default.i
 
 # target to preprocess a source file
-src.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Fiduccia.dir/build.make CMakeFiles/Fiduccia.dir/src.cpp.i
-.PHONY : src.cpp.i
+default.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/default.dir/build.make CMakeFiles/default.dir/default.cpp.i
+.PHONY : default.cpp.i
 
-src.s: src.cpp.s
-.PHONY : src.s
+default.s: default.cpp.s
+.PHONY : default.s
 
 # target to generate assembly for a file
-src.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Fiduccia.dir/build.make CMakeFiles/Fiduccia.dir/src.cpp.s
-.PHONY : src.cpp.s
+default.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/default.dir/build.make CMakeFiles/default.dir/default.cpp.s
+.PHONY : default.cpp.s
+
+modified.o: modified.cpp.o
+.PHONY : modified.o
+
+# target to build an object file
+modified.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/modified.dir/build.make CMakeFiles/modified.dir/modified.cpp.o
+.PHONY : modified.cpp.o
+
+modified.i: modified.cpp.i
+.PHONY : modified.i
+
+# target to preprocess a source file
+modified.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/modified.dir/build.make CMakeFiles/modified.dir/modified.cpp.i
+.PHONY : modified.cpp.i
+
+modified.s: modified.cpp.s
+.PHONY : modified.s
+
+# target to generate assembly for a file
+modified.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/modified.dir/build.make CMakeFiles/modified.dir/modified.cpp.s
+.PHONY : modified.cpp.s
+
+source.o: source.cpp.o
+.PHONY : source.o
+
+# target to build an object file
+source.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/default.dir/build.make CMakeFiles/default.dir/source.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/modified.dir/build.make CMakeFiles/modified.dir/source.cpp.o
+.PHONY : source.cpp.o
+
+source.i: source.cpp.i
+.PHONY : source.i
+
+# target to preprocess a source file
+source.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/default.dir/build.make CMakeFiles/default.dir/source.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/modified.dir/build.make CMakeFiles/modified.dir/source.cpp.i
+.PHONY : source.cpp.i
+
+source.s: source.cpp.s
+.PHONY : source.s
+
+# target to generate assembly for a file
+source.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/default.dir/build.make CMakeFiles/default.dir/source.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/modified.dir/build.make CMakeFiles/modified.dir/source.cpp.s
+.PHONY : source.cpp.s
 
 # Help Target
 help:
@@ -185,13 +225,17 @@ help:
 	@echo "... depend"
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
-	@echo "... Fiduccia"
-	@echo "... main.o"
-	@echo "... main.i"
-	@echo "... main.s"
-	@echo "... src.o"
-	@echo "... src.i"
-	@echo "... src.s"
+	@echo "... default"
+	@echo "... modified"
+	@echo "... default.o"
+	@echo "... default.i"
+	@echo "... default.s"
+	@echo "... modified.o"
+	@echo "... modified.i"
+	@echo "... modified.s"
+	@echo "... source.o"
+	@echo "... source.i"
+	@echo "... source.s"
 .PHONY : help
 
 
