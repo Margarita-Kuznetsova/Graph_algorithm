@@ -360,7 +360,7 @@ namespace AlgMod
     {
       auto&& Side = getNeededSide (Prt.getPart ().at (i));
       auto& Item = Side[VertGain[i]];
-      Item.push_back (i);
+      Item.push_front (i);
       Iterators[i] = Item.begin ();
     }
   }
