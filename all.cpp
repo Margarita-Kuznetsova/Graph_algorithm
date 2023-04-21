@@ -37,12 +37,12 @@ int main(int argc, char *argv[])
   auto const End = std::chrono::steady_clock::now();
 
   // Итоговый вывод
-  partitions.out(OutFile);
+  //partitions.out(OutFile);
 
   // Вывод в формате: входной файл | вид ребер в графе | вид вершин в графе | счетчик разбиений | время работы алгоритма | итерации
   // используется для parse.py скрипта и оценки работы алгоритма
-  // OutFile << argv[1] << ' ' << hgraph.getEdges().size() << ' '
-  //       << hgraph.getVertices().size() << ' ' << partitions.getCost() << ' '
-  //       << (End - Start).count()<< ' ' << Iterations << '\n';
+   OutFile << argv[1] << ' ' << hgraph.getEdges().size() << ' '
+         << hgraph.getVertices().size() << ' ' << partitions.getCost() << ' '
+         << (End - Start).count()<< ' ' << Iterations << '\n';
   return 0;
 }
