@@ -1,4 +1,5 @@
-#include "apply.hpp"
+#include "Alg/base.hpp"
+#include "Alg/mod.hpp"
 #include <chrono>
 
 int main(int argc, char *argv[])
@@ -30,19 +31,19 @@ int main(int argc, char *argv[])
   Partitions partitions{hgraph};
 
   // Время до
-  auto const Start = std::chrono::steady_clock::now();
+  auto const Start = std::chrono::high_resolution_clock::now();
   // Выполняем проход о графу
-  unsigned const Iterations = isMod ? AlgMod::FMMod(hgraph, partitions) : FM(hgraph, partitions);
+  unsigned const Iterations = isMod ? Mod::Alg(hgraph, partitions) : Base::Alg(hgraph, partitions);
   // Время после
-  auto const End = std::chrono::steady_clock::now();
+  auto const End = std::chrono::high_resolution_clock::now();
 
   // Итоговый вывод
-  //partitions.out(OutFile);
+  partitions.out(OutFile);
 
   // Вывод в формате: входной файл | вид ребер в графе | вид вершин в графе | счетчик разбиений | время работы алгоритма | итерации
   // используется для parse.py скрипта и оценки работы алгоритма
-   OutFile << argv[1] << ' ' << hgraph.getEdges().size() << ' '
-         << hgraph.getVertices().size() << ' ' << partitions.getCost() << ' '
-         << (End - Start).count()<< ' ' << Iterations << '\n';
+  //OutFile << file << ' ' << hgraph.getEdges().size() << ' '
+  //       << hgraph.getVertices().size() << ' ' << partitions.getCost() << ' '
+  //       << (End - Start).count()<< ' ' << Iterations << '\n';
   return 0;
 }
